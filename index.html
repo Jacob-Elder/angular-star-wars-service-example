@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ServiceApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Service App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+  </head>
+  <body ng-controller="HomeCtrl">
+    Angular, what is 1 + 1? {{1 + 1}}
+    Yo, you go stuff? {{stuff}}
+
+    <p ng-if="movies.length === 0">loading...</p>
+    <ul ng-if="movies.length > 0">
+      <li ng-repeat="movie in movies">
+        <p ng-if="!movie.isExpanded">
+          {{movie.title}}
+          <a ng-click="expand(movie)" href="#">expand plot</a>
+        </p>
+        <p ng-if="movie.isExpanded">
+          {{movie.title}}
+          <a ng-click="collapse(movie)" href="#">collapse plot</a>
+        </p>
+        <p ng-if="movie.isExpanded">{{movie.opening_crawl}}</p>
+      </li>
+    </ul>
+  </body>
+</html>
