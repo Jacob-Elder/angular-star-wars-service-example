@@ -11,6 +11,13 @@
     Angular, what is 1 + 1? {{1 + 1}}
     Yo, you go stuff? {{stuff}}
 
+    <h1>Planets</h1>
+    <p ng-if="planets.length === 0">loading...</p>
+    <ul ng-if="planets.length > 0">
+      <li ng-repeat="planet in planets">{{planet.name}}</li>
+    </ul>
+
+    <h1>Movies</h1>
     <p ng-if="movies.length === 0">loading...</p>
     <ul ng-if="movies.length > 0">
       <li ng-repeat="movie in movies">
